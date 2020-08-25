@@ -1,0 +1,12 @@
+{% extends "survey/base.html" %}
+
+{% block title %}{{ survey }} - Results{% endblock %}
+
+{% block content %}
+<div class="survey-panel">
+    <div class="panel-header">
+        <h3 class="panel-title">Your Score</h3>
+        <h4>{{ score }}</h4>
+    </div>
+</div>
+{% endblock %}

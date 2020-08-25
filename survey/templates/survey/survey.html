@@ -1,0 +1,24 @@
+{% extends "survey/base.html" %}
+
+{% block title %}{{ survey.title }}{% endblock %}
+
+{% block content %}
+<div class="row mt-1 mb-1">
+    <div class="col-9 border-bottom border-dark"><strong>{{ survey.title }}</strong></div>
+    <div class="col ml-2 mr-2 text-white bg-dark text-center"><strong>Yes</strong></div>
+    <div class="col ml-2 mr-2 text-white bg-dark text-center"><strong>No</strong></div>
+</div>
+<form method="POST">
+    {% csrf_token %}
+    {% for question in questions %}
+    <div class="row mt-1 mb-1">
+        <div class="col-9">{{ question.question }}</div>
+        <div class="col ml-2 mr-2 bg-light d-flex justify-content-center d-flex align-items-center"><input type="radio" name="survey" value="yes" required></div>
+        <div class="col ml-2 mr-2 bg-light d-flex justify-content-center d-flex align-items-center"><input type="radio" name="survey" value="no"></div> 
+    </div>
+{% endfor %}
+    <button type="submit" class="btn btn-success rounded">
+        Submit
+    </button>
+</form>
+{% endblock %}

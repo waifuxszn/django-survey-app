@@ -1,0 +1,15 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'survey:index' %}">
+        <img src="{% static 'images/su_logo.png' %}" alt="Stevenson logo">
+        Nursing Surveys
+    </a>
+    <div class="collapse navbar-collapse">
+        <div class="navbar-nav ml-auto" id="navbarSupportedContent">
+            <a class="nav-item nav-link active" href="{% url 'survey:index' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'admin:index' %}">Admin</a>
+            <a class="nav-item nav-link" href="{% url 'survey:new_guest_session' %}">New Guest Session</a>
+        </div>
+    </div>
+</nav>
